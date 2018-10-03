@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="3dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="3dp"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/message_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/message_bubble_sent"
+        android:longClickable="true"
+        android:minHeight="53dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/message_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="true"
+                android:background="@color/black87"
+                android:longClickable="true"
+                android:scaleType="centerCrop" />
+
+            <ru.messenger.inex_messenger.ui.widget.CopyTextView
+                android:id="@+id/message_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:longClickable="true"
+                android:textColor="?attr/color_text_primary"
+                android:textColorHighlight="@color/grey500"
+                android:textColorLink="@color/black87"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/download_button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:longClickable="true"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp">
+
+                <TextView
+                    android:id="@+id/message_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="@string/sending"
+                    android:textColor="?attr/color_text_secondary"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/security_indicator"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:alpha="0.54"
+                    android:gravity="center_vertical"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_lock_black_18dp" />
+
+                <ImageView
+                    android:id="@+id/edit_indicator"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:alpha="0.54"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_mode_edit_black_18dp" />
+
+                <ImageView
+                    android:id="@+id/indicator_received_grey"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:alpha="0.54"
+                    android:gravity="center_vertical"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_received_indicator_grey" />
+
+                <ImageView
+                    android:id="@+id/indicator_received"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:alpha="0.54"
+                    android:gravity="center_vertical"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_received_indicator" />
+
+                <ImageView
+                    android:id="@+id/indicator_receivedW"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="2dp"
+                    android:alpha="0.54"
+                    android:gravity="center_vertical"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_received_indicator_w" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ru.messenger.inex_messenger.circleimage.CircleImageView
+        android:id="@+id/message_photo"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_above="@+id/message_box"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+
+        />
+    <!--com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/message_photo"
+        android:layout_width="@dimen/abc_control_inset_material"
+        android:layout_height="@dimen/abc_control_inset_material"
+        android:layout_above="@+id/message_box"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:paddingBottom="3dp"
+
+        android:src="@drawable/ic_profile"
+        app:riv_corner_radius="2dp" /-->
+
+</RelativeLayout>

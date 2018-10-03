@@ -1,0 +1,258 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:descendantFocusability="blocksDescendants">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/conversations_overview_background" />
+
+    <FrameLayout
+        android:id="@+id/swipeable_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/color_background_primary">
+<!--android:orientation="horizontal"-->
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+
+            <RelativeLayout
+                android:layout_width="24dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:padding="0dp">
+
+                <ImageView
+                    android:id="@+id/imageLock"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/ic_lock_black_18dp" />
+
+                <ru.messenger.inex_messenger.circleimage.CircleImageView
+                    android:id="@+id/indicator_line"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic__indicator_terra"
+                    app:civ_border_width="0dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout_conversation_image"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
+
+                <!--
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+-->
+                <ru.messenger.inex_messenger.circleimage.CircleImageView
+                    android:id="@+id/conversation_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_soldier"
+                    app:civ_border_width="0dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout_conversation_image"
+                android:paddingLeft="8dp">
+
+
+                <TextView
+                    android:id="@+id/conversation_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/conversation_lastwrapper"
+                    android:paddingRight="4dp"
+                    android:singleLine="true"
+                    android:text="Awesome groupchat"
+                    android:textColor="@color/background_material_dark"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_toLeftOf="@+id/conversation_lastupdate"
+                    android:layout_toStartOf="@+id/conversation_lastupdate" />
+
+                <TextView
+                    android:id="@+id/textstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/conversation_name"
+                    android:layout_marginTop="-3dp"
+                    android:text="TextView"
+                    android:textSize="8sp"
+                    android:textStyle="italic" />
+
+                <RelativeLayout
+                    android:id="@+id/conversation_lastwrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textstatus"
+                    android:layout_marginTop="-2dp">
+
+
+                    <TextView
+                        android:id="@+id/ls_sendername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_alignBottom="@+id/ls_indicator_received_grey"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="SenderName:"
+                        android:textColor="@color/black54"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/ls_indicator_received_grey"
+                        android:layout_width="20dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/ls_sendername"
+                        android:layout_toRightOf="@+id/ls_sendername"
+                        android:layout_weight="0"
+                        android:alpha="0.54"
+                        android:src="@drawable/ic_received_indicator_grey"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/ls_indicator_received"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/ls_indicator_received_grey"
+                        android:layout_toRightOf="@+id/ls_indicator_received_grey"
+                        android:alpha="0.54"
+                        android:src="@drawable/ic_received_indicator"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/ls_indicator_receivedW"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/ls_indicator_received"
+                        android:layout_toRightOf="@+id/ls_indicator_received"
+                        android:alpha="0.54"
+                        android:src="@drawable/ic_received_indicator_w"
+                        android:visibility="visible" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/ls_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_toLeftOf="@+id/notification_status"
+                        android:layout_toRightOf="@+id/ls_indicator_receivedW">
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/conversation_lastimage"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:background="@drawable/abc_btn_radio_to_on_mtrl_015"
+                            android:scaleType="centerCrop"
+                            app:riv_corner_radius="2dp" />
+
+                        <TextView
+                            android:id="@+id/conversation_lastmsg"
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="0dp"
+                            android:layout_toRightOf="@+id/conversation_lastimage"
+                            android:scrollHorizontally="false"
+                            android:singleLine="true"
+                            android:text="This is a placeholder text to show the last messages"
+                            android:textColor="@color/black54" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/notification_status"
+                        android:layout_width="16sp"
+                        android:layout_height="16sp"
+                        android:layout_alignParentRight="true"
+
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginTop="2dp"
+                        android:visibility="visible">
+
+                        <ru.messenger.inex_messenger.circleimage.CircleImageView
+                            android:id="@+id/CircleImageView"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@color/green200" />
+
+                        <TextView
+                            android:id="@+id/notification_status0"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="0dp"
+                            android:autoText="false"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="0"
+                            android:textColor="@color/bright_foreground_material_dark"
+                            android:textSize="8sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/conversation_lastupdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/conversation_lastwrapper"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="0dp"
+                    android:gravity="right"
+                    android:text="23:42"
+                    android:textColor="?attr/color_text_secondary"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>
