@@ -3,9 +3,7 @@
     android:id="@+id/content_view_spl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <!--        android:layout_width="fill_parent"
-android:layout_width="@dimen/conversations_overview_width"
--->
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,8 +14,8 @@ android:layout_width="@dimen/conversations_overview_width"
         <de.timroes.android.listview.EnhancedListView
             android:id="@+id/list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.00"
+            android:layout_height="0dp"
+            android:layout_weight="0"
             android:background="?attr/color_background_primary"
             android:divider="@color/black12"
             android:dividerHeight="1dp" />
@@ -28,7 +26,6 @@ android:layout_width="@dimen/conversations_overview_width"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical" />
 
 </ru.messenger.inex_messenger.SlidingPanel.SlidingPaneLayout>
-<!--/android.support.v4.widget.SlidingPaneLayout-->
