@@ -47,7 +47,7 @@
             android:launchMode="singleTask"
             android:minWidth="300dp"
             android:minHeight="300dp"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.StartConversationActivity"
             android:label="@string/title_activity_start_conversation"
@@ -75,7 +75,8 @@
 
                 <data android:scheme="xmpp" />
             </intent-filter>
-            <intent-filter android:autoVerify="true">
+            <intent-filter android:autoVerify="true"
+                tools:targetApi="m">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
